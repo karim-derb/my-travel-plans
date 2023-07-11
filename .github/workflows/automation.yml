@@ -1,0 +1,12 @@
+name: Automation Workflow
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight (UTC time)
+jobs:
+  automate:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Run automation script
+      run: python automation_script.py
